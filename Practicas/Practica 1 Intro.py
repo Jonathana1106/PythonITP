@@ -1,3 +1,9 @@
+'''
+
+Profesor: Eduardo Canessa Montero
+Alumno: Jonathan Alberto Guzman Araya
+Curso: Introduccion a la programacion '''
+
 ############################### Practica 1 ######################################
 
 import math
@@ -43,9 +49,9 @@ def convertir_a_letras(num):  # Se crea la funcion
 
 def esfera(radio):
     if (isinstance(radio, int) or isinstance(radio, float)) and  radio >= 0:
-        #Area = 4*math.pi*radio**2
-        #Volumen = 4/3*math.pi*radio**2
-        Resultado = {"Area": 4*math.pi*radio**2, "Volumen":  4/3*math.pi*radio**2}
+        Area = 4*math.pi*radio**2
+        Volumen = 4/3*math.pi*radio**2
+        Resultado = {"Area": Area, "Volumen":  Volumen}
         return Resultado
 #UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU#
 

@@ -1,5 +1,8 @@
+'''
 
-
+Profesor: Eduardo Canessa Montero
+Alumno: Jonathan Alberto Guzman Araya
+Curso: Introduccion a la programacion '''
 
 #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#
 
@@ -66,22 +69,24 @@ def suma_dig(num):
         if num == 0:
             return 0
         elif num > 0:
-            return suma_aux(num)
+            return suma_auxi(num)
         else:
             return "Error"
     elif isinstance(num, float):
-        if num == 0:
+        if num == 0.0:
             return 0
-        elif num > 0:
+        elif num > 0.0:
             return suma_auxf(num*100)
         else:
             return "Error"
+    else:
+        return "Error"
 
-def suma_aux(num):
+def suma_auxi(num):
     if num == 0:
         return 0
     else:
-        return num%10 + suma_aux(num//10)
+        return num%10 + suma_auxi(num//10)
 
 def suma_auxf(num):
     if num == 0:
@@ -176,15 +181,33 @@ def suma_aux(n, i):
 
 def num_append(num1, num2):
     if isinstance(num1, int) and isinstance(num2, int):
-        return aux(num1, num2, len("num2"))
+        return auxna(num1, num2, tam_num(num2))
     else:
         return "Error"
 
-def aux(num1, num2, n):
+def auxna(num1, num2, n):
     if num2 == 0:
         return 0
     else:
-        return ((num1*10)+(num2//n)) + aux(num1, num2//10)
+        k = num2//10
+        return ((num1*10)+(num2//10)) + auxna(num1, k, tam_num(k))
+
+def tam_num(num):
+    if isinstance(num, int):
+        if num >= 0 and num <= 9:
+            return 1
+        elif num > 9:
+            n = 0
+            while num != 0:
+                num = num//10
+                n = n + 1
+            return n
+        else:
+            num = num*-1
+            return tam_num(num)
+    else:
+        return "Error"
+    
 
 #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#
 
