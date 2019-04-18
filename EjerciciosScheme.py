@@ -77,27 +77,5 @@ def auxL(num, lista, i, listaR):
 
 ############################## QuickSort ##################################
 
-def quickSort(lista):
-    if isinstance(lista, list):
-        return quickAux(lista, (len(lista)//2), 0, len(lista) - 1)
-    else:
-        return "Error en la lista ingresada"
 
-def quickAux(lista, p, i, f):
-    if p == i and f == p:
-        return lista
-    elif lista[i] > lista[p] and lista[f] < lista[p]:
-        a = lista[f]
-        lista[f] = lista[i]
-        lista[i] = a
-        i = i + 1
-        f = f - 1
-        return quickAux(lista, p, i, f)
-    elif lista[i] > lista[p] and lista[f] > lista[p]:
-        f = f - 1
-        return quickAux(lista, p, i, f)
-    elif lista[i] < lista[p] and lista[f] > lista[p]:
-        i = i + 1
-        return quickAux(lista, p, i, f)
-    else:
-        return "Error"
+
